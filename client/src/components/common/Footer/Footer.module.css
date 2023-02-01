@@ -1,0 +1,48 @@
+.container {
+  margin-top: auto;
+  display: flex;
+  height: 3em;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--color1);
+  border-top: 2px solid var(--color4);
+  font-size: 12px;
+}
+
+.container span {
+  margin-right: 2em;
+  font-family: 'Concert One';
+  color: aliceblue;
+}
+
+.imgLinkedin {
+  margin-top: 4px;
+  margin-right: 5px;
+}
+
+.imgGithub {
+  margin-top: 4px;
+  margin-right: 2em;
+}
+
+/*small sm*/
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .container {
+    font-size: 14px;
+  }
+ 
+}
+/*medium md*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .container {
+    font-size: 15px;
+  }
+ 
+}
+ /*large l xl xxl*/
+@media screen and (min-width: 992px) {
+  .container {
+    font-size: 16px;
+  }
+  
+}

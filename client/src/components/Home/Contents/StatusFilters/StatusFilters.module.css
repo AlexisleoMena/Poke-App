@@ -1,0 +1,114 @@
+.container {
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  /* background-color: var(--color1); */
+  font-family: 'Concert One';
+  font-size: 12px;
+  /* border-bottom: 1px solid var(--color4); */
+  z-index: 1;
+  height: 2.5em;
+
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--color1);
+  padding: 0 1em 0 1em;
+  /* width: 7.5em; */
+  width: 12em;
+  max-width: 12em;
+  height: 2.5em;
+  cursor: pointer;
+  border-left: 1px solid var(--color4);
+  /* transform: skew(-20deg, 0); */
+  border-radius: 5px;
+
+}
+
+.btn:active{
+  background-color: var(--color2);
+}
+
+.btn > h3 {
+  margin-left: 10px;
+}
+.filters__actives {
+  background-color: var(--color1);
+  width: max-content;
+  display: flex;
+  align-items: center;
+  border-radius: 5px 0 0 5px;
+}
+.have_actives_filters {
+  border-radius: 0 5px 5px 0;
+}
+
+.filter__active {
+  display: flex;
+  align-items: center;  
+  height: 1.5em;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid var(--color4);
+  border-radius: 5px;
+  background-color: var(--color2);
+  cursor: pointer;
+
+
+}
+.filter__active > span {
+  display: block;
+  align-items: baseline;
+  max-width: 4em;
+  font-size: .7rem;
+  border-radius: .3em;
+  text-transform:uppercase;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.filter__active i {
+  font-size: .7rem;
+  margin: 0 2px 0 5px;
+}
+
+/*small sm*/
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .container {
+    font-size: 14px;
+  }
+  .filters__actives .filter__active span {
+    max-width: 9em;
+    font-size: .8rem;
+  }
+}
+/*medium md*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .container {
+    font-size: 15px;
+  }
+  .filters__actives .filter__active span {
+    max-width: 9em;
+    font-size: .9rem;
+  }
+}
+ /*large l xl xxl*/
+@media screen and (min-width: 992px) {
+  .container {
+    font-size: 16px;
+  }
+  .filters__actives .filter__active span {
+    max-width: 11em;
+    font-size: 1rem;
+  }
+}
+

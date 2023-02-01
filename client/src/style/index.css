@@ -1,0 +1,23 @@
+@import url(./normalize.css);
+@import url(./bg-types.css);
+:root {
+  --color1: #be0001;
+  --color2: #f88921fe;
+  --color3: #f3c75f;
+  --color4: #e9cfaa;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
