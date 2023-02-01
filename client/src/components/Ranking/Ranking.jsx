@@ -34,7 +34,7 @@ const Ranking = () => {
     <div className={styles.container}>
       {
         loading 
-        ? <Loader />
+        ? <div className={styles.loader_container}><Loader /></div>
         : elements?.map((e, i) => (<Card element={e} number={i+1} key={e.id}/>  ))
       }
     </div>
