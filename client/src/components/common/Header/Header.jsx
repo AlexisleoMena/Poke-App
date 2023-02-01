@@ -21,6 +21,7 @@ const Header = () => {
   const [name, setName] = useState("");
 
   function handleClick(endpoint) {
+    if( location.pathname === endpoint ) return;
     setShowMenu(false);
     dispatch(deepCleanUp())
     navigate(endpoint);
