@@ -1,5 +1,5 @@
 .normal {
-  background: radial-gradient(circle, rgba(250,251,63,1) 26%, rgba(252,149,70,1) 100%);
+  background: radial-gradient(circle, rgb(255, 226, 130) 26%, rgb(251, 157, 84) 100%);
 }
 .fighting {
   background: radial-gradient(circle, rgb(234, 43, 81) 26%, rgb(94, 3, 21) 100%);
@@ -14,11 +14,11 @@
 
 }
 .ground {
-  background: radial-gradient(circle, rgb(203, 113, 113) 26%, rgb(132, 50, 50) 100%);
+  background: radial-gradient(circle, rgb(212, 116, 116) 26%, rgb(132, 50, 50) 100%);
 
 }
 .rock {
-  background: radial-gradient(circle, rgb(187, 152, 125) 26%, rgb(108, 95, 61) 100%);
+  background: radial-gradient(circle, rgb(187, 149, 119) 26%, rgb(104, 88, 49) 100%);
 
 }
 .bug {
@@ -34,27 +34,27 @@
 
 }
 .fire {
-  background: radial-gradient(circle, rgb(247, 129, 129) 26%, rgb(239, 12, 12) 100%);
+  background: radial-gradient(circle, rgb(240, 112, 112) 26%, rgb(239, 12, 12) 100%);
 
 }
 .water {
-  background: radial-gradient(circle, rgb(118, 118, 221) 26%, rgb(52, 52, 234) 100%);
+  background: radial-gradient(circle, rgb(112, 112, 209) 26%, rgb(52, 52, 234) 100%);
 
 }
 .grass {
-  background: radial-gradient(circle, rgb(21, 180, 71) 26%, rgb(2, 73, 7) 100%);
+  background: radial-gradient(circle, rgb(9, 155, 56) 26%, rgb(2, 73, 7) 100%);
 
 }
 .electric {
-  background: radial-gradient(circle, rgb(238, 255, 0) 26%,  rgb(255, 166, 0)   100%);
+  background: radial-gradient(circle, rgba(255, 225, 0, 0.835) 26%,  rgb(255, 166, 0)   100%);
 
 }
 .psychic { 
-  background: radial-gradient(circle, rgb(196, 152, 202) 26%, rgb(198, 10, 192) 100%);
+  background: radial-gradient(circle, rgb(204, 148, 211) 26%, rgb(198, 10, 192) 100%);
 
 }
 .ice {
-  background: radial-gradient(circle, rgb(97, 193, 238) 26%, rgb(4, 104, 140) 100%);
+  background: radial-gradient(circle, rgb(81, 173, 216) 26%, rgb(4, 104, 140) 100%);
 
 }
 .dragon {
@@ -66,7 +66,7 @@
 
 }
 .fairy {
-  background: radial-gradient(circle, pink 26%, rgb(216, 75, 99) 100%);
+  background: radial-gradient(circle, rgb(222, 139, 153) 26%, rgb(216, 75, 99) 100%);
 
 }
 .unknown {

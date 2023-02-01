@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -8,7 +8,6 @@ import * as Icons from "../../helpers/Icons_types.js"
 import styles from "./Details.module.css";
 import { useLayoutEffect } from "react";
 import Loader from "../common/Loader/Loader";
-import { useCallback } from "react";
 
 import { IoStarOutline, IoStar } from "react-icons/io5";
 

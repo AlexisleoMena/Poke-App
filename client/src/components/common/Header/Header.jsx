@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { deepCleanUp, getAllPokemons, setLoading, createUser, searchByName } from '../../../redux/actions';
+import { deepCleanUp, setLoading, createUser, searchByName } from '../../../redux/actions';
 import styles from "./Header.module.css"
 
 const Header = () => {

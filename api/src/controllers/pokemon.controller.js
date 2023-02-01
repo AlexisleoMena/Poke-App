@@ -25,7 +25,10 @@ const getAllPokemons = async (req, res) => {
   let name = req.query.name;
   try {
     if(name !== undefined) {
-      let { data } = await axios("https://pokeapi.co/api/v2/pokemon/" + name);
+      let nameTrimed = name.replace(/^\s+|\s+$/, "");
+      let nameLowerCase = nameTrimed.toLowerCase();
+      let middleHyphenName = nameLowerCase.replace(" ", "-")
+      let { data } = await axios("https://pokeapi.co/api/v2/pokemon/" + middleHyphenName);
       return res.status(200).send([valuesToReturnFromAPI(data)]);
     }
     const apiPokemons = await APIsPokemons();

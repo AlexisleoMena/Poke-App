@@ -21,8 +21,15 @@ export const GET_FAVORITES_RANKING = "GET_FAVORITES_RANKING";
 export function getAllPokemons() {
   return async function (dispatch) {
     try {
-      const { data } = await axios("http://localhost:3001/pokemons");
+
+      let items = JSON.parse(localStorage.getItem('allPokemons'));
+      if (items) {
+        return dispatch({ type: GET_ALL, payload: items });
+      }
+      const { data } = await axios("/pokemons");
+      localStorage.setItem('allPokemons', JSON.stringify(data))
       return dispatch({ type: GET_ALL, payload: data });
+      
     } catch (error) {
       console.log(error);
     }
@@ -31,7 +38,7 @@ export function getAllPokemons() {
 export function getAllFavorites(email) {
   return async function (dispatch) {
     try {
-      const { data } = await axios("http://localhost:3001/favorite/"+email);
+      const { data } = await axios("/favorite/"+email);
       return dispatch({ type: GET_ALL_FAVORITES, payload: data });
     } catch (error) {
       console.log(error);
@@ -42,7 +49,7 @@ export function getAllFavorites(email) {
 export function getFavoritesRanking() {
   return async function (dispatch) {
     try {
-      const { data } = await axios("http://localhost:3001/favorite/ranking");
+      const { data } = await axios("/favorite/ranking");
       return dispatch({ type: GET_FAVORITES_RANKING, payload: data });
     } catch (error) {
       console.log(error);
@@ -53,7 +60,7 @@ export function getFavoritesRanking() {
 export function searchByName( name ) {
   return async function (dispatch) {
     try {
-      const { data } = await axios(`http://localhost:3001/pokemons?name=${name}`);
+      const { data } = await axios(`/pokemons?name=${name}`);
       return dispatch({ type: GET_BY_NAME, payload: data });
     } catch (error) {
       return dispatch({ type: GET_BY_NAME, payload: [] });
@@ -68,7 +75,7 @@ export function cleanUpSearchByName() {
 export function getDetails( id ) {
   return async function (dispatch) {
     try {
-      const  { data }  = await axios(`http://localhost:3001/pokemons/${id}`);
+      const  { data }  = await axios(`/pokemons/${id}`);
       return dispatch({ type: GET_DETAILS,  payload: data });
     } catch (error) {
       console.log(error);
@@ -83,7 +90,7 @@ export function cleanUpDetail() {
 export function addFavorite( data ) {
   return function (dispatch) {
     return new Promise( function(resolve, reject) {
-      axios.post("http://localhost:3001/favorite", data)
+      axios.post("/favorite", data)
       .then( (res) => {
         dispatch({ type: ADD_FAVORITE, payload: true});
         resolve(res.data);
@@ -99,7 +106,7 @@ export function addFavorite( data ) {
 export function deleteFavorite( id, email ) {
   return function (dispatch) {
     return new Promise( function(resolve, reject) {
-      axios.delete(`http://localhost:3001/favorite/${id}/${email}`)
+      axios.delete(`/favorite/${id}/${email}`)
       .then( (res) => {
         dispatch({ type: DELETE_FAVORITE, payload: true});
         resolve(res.data);
@@ -150,7 +157,7 @@ export function deepCleanUp() {
 export function createUser(email) {
   return async function (dispatch) {
     try {
-      const  { data }  = await axios.post(`http://localhost:3001/user/${email}`);
+      const  { data }  = await axios.post(`/user/${email}`);
       return dispatch({ type: CREATE_USER,  payload: data });
     } catch (error) {
       console.log(error);

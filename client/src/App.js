@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Details from './components/Details/Details';
 import Favorites from './components/Favorites/Favorites';
-import Footer from './components/Home/Footer/Footer';
-import Header from './components/Home/Header/Header';
+import Footer from './components/common/Footer/Footer';
+import Header from './components/common/Header/Header';
 import Home from './components/Home/Home';
 import Ranking from './components/Ranking/Ranking';
 // import Landing from './components/common/Landing/Landing';

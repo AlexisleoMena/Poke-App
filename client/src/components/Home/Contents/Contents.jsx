@@ -49,6 +49,7 @@ const Contents = ({elements, allElements}) => {
 
   function handleClickNewDeck() {
     dispatch(deepCleanUp())
+    localStorage.setItem('allPokemons', JSON.stringify(null))
     dispatch(setLoading(true))
     dispatch(getAllPokemons())
     navigate("/");

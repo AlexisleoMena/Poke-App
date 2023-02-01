@@ -42,8 +42,8 @@ const Front = ({element}) => {
     </Link>
     <h3 className={styles.name}>{element.name}</h3>
     <div className={styles.icons__type__container}>
-      {element.types?.map((t) => (
-        <div className={styles.icon__type}>
+      {element.types?.map((t, i) => (
+        <div className={styles.icon__type} key={i}>
           <img src={Icons[t]} alt="" height="30em" width="30em" key={t} />
           {t}
         </div>
