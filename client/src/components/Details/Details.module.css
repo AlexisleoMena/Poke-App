@@ -10,6 +10,10 @@
   font-size: 14px;
   color: #fff;
   position: relative;
+  background-image: url("../../assets/img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment:fixed;
 }
 .btn__back {
   z-index: 3;

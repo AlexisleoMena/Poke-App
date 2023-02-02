@@ -4,13 +4,11 @@
   justify-content: flex-end;
   width: 100%;
   position: absolute;
-  top: 0;
+  top: 4em;
   right: 0;
   color: #fff;
-  /* background-color: var(--color1); */
   font-family: 'Concert One';
-  font-size: 12px;
-  /* border-bottom: 1px solid var(--color4); */
+  font-size: 15px;
   z-index: 1;
   height: 2.5em;
 
@@ -81,11 +79,14 @@
   margin: 0 2px 0 5px;
 }
 
+@media screen and (max-width: 575px) {
+  .container {
+    display: none;
+  }
+}
 /*small sm*/
 @media screen and (min-width: 576px) and (max-width: 767px) {
-  .container {
-    font-size: 14px;
-  }
+
   .filters__actives .filter__active span {
     max-width: 9em;
     font-size: .8rem;

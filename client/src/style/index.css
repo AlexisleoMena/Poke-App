@@ -1,10 +1,16 @@
 @import url(./normalize.css);
 @import url(./bg-types.css);
 :root {
-  --color1: #be0001;
+  /* --color1: #be0001;
   --color2: #f88921fe;
   --color3: #f3c75f;
-  --color4: #e9cfaa;
+  --color4: #e9cfaa; */
+
+  --color1: #0c478a;
+  --color2: #0a5f9e;
+  --color3: #0986b4;
+  --color4: #07bec5;
+  --color5: #03fdbc;
 }
 a {
   text-decoration: none;
