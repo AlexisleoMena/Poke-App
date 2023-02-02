@@ -13,11 +13,11 @@ const Favorites = () => {
 
   useEffect(() => {
     dispatch(deepCleanUp());
-    if(user && Object.keys(user).length) {
+    if(user && Object.keys(user).length && !elements.length) {
       dispatch(getAllFavorites(user.email))
     }
     return () => window.scroll(0, 0);
-  }, [dispatch, user]);
+  }, [dispatch, user, elements.length]);
   return (
     <div className={styles.container}>
       { !isAuthenticated 

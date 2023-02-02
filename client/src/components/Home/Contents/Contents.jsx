@@ -13,6 +13,7 @@ import styles from "./Contents.module.css"
 import StatusFilters from './StatusFilters/StatusFilters';
 import Filters from './Filters/Filters';
 import Front from '../../common/Card/Front/Front';
+import { useCallback } from 'react';
 
 const CardsContainer = ({array}) => (
   <div className={styles.cards__container}>
@@ -27,7 +28,7 @@ const Contents = ({elements, allElements}) => {
   const navigate = useNavigate();
   let location = useLocation();
 
-  const { user } = useAuth0();
+  const { isAuthenticated ,user } = useAuth0();
 
   const { loading, currentPage, recentSearch } = useSelector((state) => state)
   const [openFilters, setOpenFilters] = useState(false);
@@ -35,17 +36,25 @@ const Contents = ({elements, allElements}) => {
     if(!elements.length) {
       dispatch(setLoading(true))
       dispatch(getAllPokemons())
-      if(user) {
-        dispatch(getAllFavorites(user.email))
-      }
     }
-  }, [dispatch, elements.length, user]);
+    if(isAuthenticated && user && Object.keys(user).length) {
+      dispatch(getAllFavorites(user.email))
+    }
+  }, [dispatch, isAuthenticated, elements.length, user]);
 
   const cardsPerPage = 12;
   const lastIndex = currentPage * cardsPerPage;
   const firstIndex = lastIndex - cardsPerPage;
   let currentCards = elements.slice(firstIndex, lastIndex);
-  const selectPageNumber = (pageNumber) => dispatch(setCurrentPage(pageNumber));
+  const selectPageNumber = useCallback(pageNumber => dispatch(setCurrentPage(pageNumber)), [dispatch]);
+
+  useEffect(() => {
+    if(elements.length && !currentCards.length && cardsPerPage !== 1) {
+      selectPageNumber(currentPage - 1)
+    }
+  }, [elements.length ,currentCards.length, currentPage, selectPageNumber] )
+
+
 
   function handleClickNewDeck() {
     dispatch(deepCleanUp())

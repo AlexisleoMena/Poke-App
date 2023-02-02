@@ -14,8 +14,13 @@ const Front = ({element}) => {
   const auxIsFavorite = useCallback((id) => favorites.some((favorite) => favorite.id === Number(id)), [favorites])
   const [isFavorite, setIsFavorite] = useState(false);
   useEffect(() => {
-    favorites.length && setIsFavorite(auxIsFavorite(element.id))
-  }, [favorites.length, auxIsFavorite, element.id])
+    console.log("ENTREEEaa")
+
+    if(isAuthenticated && favorites.length) {
+      console.log("ENTREEE")
+      setIsFavorite(auxIsFavorite(element.id))
+    }
+  }, [favorites.length, auxIsFavorite, element.id, isAuthenticated])
 
   async function handleAddFavorites() {
     try {
