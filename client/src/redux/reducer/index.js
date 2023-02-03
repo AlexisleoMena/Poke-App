@@ -115,7 +115,6 @@ export default function reducer( state=initialState, action ) {
       }
     case APPLY_FILTERS:
       let filtered = applyFilters(state.filters, state[payload]);
-      console.log("PAYLOAD", payload)
       let elements = payload === 'allFavorites' ? 'favorites' : 'pokemons'
       return {
         ...state,
